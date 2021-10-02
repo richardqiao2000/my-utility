@@ -1,6 +1,7 @@
 ## Build
 ```shell
 # in exe folder, run
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.9.jdk/Contents/Home mvn clean install
 ./build.sh
 ```
 ## Package
