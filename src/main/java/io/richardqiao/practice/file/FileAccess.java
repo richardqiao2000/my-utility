@@ -7,12 +7,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class FileAccess {
 
     public static void main(String[] args) throws IOException {
-//        readFile();
+        readFile();
         writeFile();
+        writeFileNIO();
     }
 
     // 1. Read file line by line
@@ -55,8 +57,5 @@ public class FileAccess {
             fileChannel.write(ByteBuffer.wrap("\n".getBytes()));
         }
     }
-
-    // 3. Console
-    // 4. Json
 
 }
