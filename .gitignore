@@ -12,8 +12,6 @@
 **/generated/**
 target/*
 */target/**
-BQLTests/benchmarks/target/
-BQLTests/scenarios/target/
 
 # Logs
 */logs/*
@@ -22,19 +20,6 @@ BQLTests/scenarios/target/
 BQLMetaDataService/src/main/schema/*.sql
 
 # Backup files
-*~
-/sys/target/
-/sys/utils/target/
-/collection/target/
-/collection-arrow/target/
-/Commons/target/
-/collection/nbproject/
-/BQLServiceCommons/target/
-/BQLService/target/
-/BQLAsyncService/target/
-/BQLTests/target/
-/BQLMetaDataService/target/
-/AppMetaDataEngine/target/
 coverage
 target
 bin
