@@ -1,4 +1,4 @@
-package io.richardqiao.practice.file;
+package io.richardqiao.practice;
 
 import java.io.*;
 import java.util.Scanner;
