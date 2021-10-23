@@ -3,6 +3,8 @@ package io.richardqiao.practice.algorithms;
 import java.util.*;
 
 /**
+ 注：谨以此代码献给仍然勤奋战斗在买买提BBS各条战线上的老将们
+
  倒水问题，已知两个被子的容积，通过倒水的方法找出目标容积的水
  例如：
  bottle1 size: 10, bottle2 size: 21, target: 22
@@ -17,12 +19,10 @@ import java.util.*;
 class PourWater {
 
     public static void main(String[] args) {
-        Set<String> set = new HashSet<>();
-//        set.add("0,0");
         LinkedList<String> res = steps(
                 0, 17,
-                0, 13, 30,
-                new LinkedList<>(), "Start", set, new HashMap<>());
+                0, 13, 15,
+                new LinkedList<>(), "Start", new HashSet<>(), new HashMap<>());
         if(res == null) {
             System.out.println("No Answer!");
             return;
@@ -54,7 +54,7 @@ class PourWater {
         if(bottle1 == target || bottle2 == target || bottle1 + bottle2 == target){
             return new LinkedList<>(list);
         }
-        // solve action and change waters
+        // resolve action and change waters
         if(action.equals(action1)){
             if(bottle1 == size1) return null;
             bottle1 = size1;
