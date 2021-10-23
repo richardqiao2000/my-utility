@@ -113,7 +113,7 @@ class PourWater {
         if(res == null || res2 != null && res2.size() < res.size()){
             res = res2;
         }
-        list.remove(list.size() - 1);
+        list.removeLast();
         visited.remove(key);
         if(res != null){
             map.put(key, res);
