@@ -19,9 +19,9 @@ import java.util.*;
 class PourWater {
 
     public static void main(String[] args) {
-        LinkedList<String> res = steps(
-                0, 17,
-                0, 13, 15,
+        LinkedList<String> res = getSteps(
+                0, 37,
+                0, 14, 25,
                 new LinkedList<>(), "Start", new HashSet<>(), new HashMap<>());
         if(res == null) {
             System.out.println("No Answer!");
@@ -47,7 +47,7 @@ class PourWater {
     static String action4 = "dump bottle2";
     static String action5 = "pour water from bottle1 to bottle2";
     static String action6 = "pour water from bottle2 to bottle1";
-    private static LinkedList<String> steps(
+    private static LinkedList<String> getSteps(
             int bottle1, int size1,
             int bottle2, int size2, int target,
             LinkedList<String> list, String action, Set<String> visited, Map<String, LinkedList<String>> map){
@@ -85,31 +85,31 @@ class PourWater {
             bottle2 = tmpBottle2;
         }
         String key = bottle1 + "," + bottle2;
-        if(map.containsKey(key)){
-            return map.get(key);
-        }
+//        if(map.containsKey(key)){
+//            return map.get(key);
+//        }
         if(visited.contains(key)) return null;
         visited.add(key);
         list.add(action + "(" + bottle1 + "," + bottle2 + ")->" + target);
         // dfs to different actions
-        LinkedList<String> res = steps(bottle1, size1, bottle2, size2, target, list, action1, visited, map);
-        LinkedList<String> res2 = steps(bottle1, size1, bottle2, size2, target, list, action2, visited, map);
+        LinkedList<String> res = getSteps(bottle1, size1, bottle2, size2, target, list, action1, visited, map);
+        LinkedList<String> res2 = getSteps(bottle1, size1, bottle2, size2, target, list, action2, visited, map);
         if(res == null || res2 != null && res2.size() < res.size()){
             res = res2;
         }
-        res2 = steps(bottle1, size1, bottle2, size2, target, list, action3, visited, map);
+        res2 = getSteps(bottle1, size1, bottle2, size2, target, list, action3, visited, map);
         if(res == null || res2 != null && res2.size() < res.size()){
             res = res2;
         }
-        res2 = steps(bottle1, size1, bottle2, size2, target, list, action4, visited, map);
+        res2 = getSteps(bottle1, size1, bottle2, size2, target, list, action4, visited, map);
         if(res == null || res2 != null && res2.size() < res.size()){
             res = res2;
         }
-        res2 = steps(bottle1, size1, bottle2, size2, target, list, action5, visited, map);
+        res2 = getSteps(bottle1, size1, bottle2, size2, target, list, action5, visited, map);
         if(res == null || res2 != null && res2.size() < res.size()){
             res = res2;
         }
-        res2 = steps(bottle1, size1, bottle2, size2, target, list, action6, visited, map);
+        res2 = getSteps(bottle1, size1, bottle2, size2, target, list, action6, visited, map);
         if(res == null || res2 != null && res2.size() < res.size()){
             res = res2;
         }
